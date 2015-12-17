@@ -1,7 +1,11 @@
-let url = "rates.json"
+import * as service from './rate-service-mock'
+
+/*let url = "rates.json"
 
 fetch(url)
-    .then(response => response.json())
+    .then(response => response.json())*/
+
+service.findAll()
     .then(rates => {
         let html = ''
         rates.forEach(rate => html += `
@@ -14,4 +18,3 @@ fetch(url)
         document.getElementById("rates").innerHTML = html
     })
     .catch(e => console.log(e))
-    
